@@ -29,8 +29,7 @@ ul li {
   cursor: pointer;
   list-style: none;
 }
-.container {
-
+#cont {
   margin-right: auto;
   margin-left: auto;
   width: auto;
@@ -39,7 +38,7 @@ ul li {
   padding-right: 25px;
   overflow: hidden;
   background-color:  var(--background-color);
-;
+
 }
 .main-title {
   position: relative;
@@ -142,6 +141,11 @@ footer {
   bottom: -62;
 }
 
+.info3 img{
+  width: 45%;
+    position: absolute;
+    left: 50%;
+}
 
 
 .contact .container .info-video {
