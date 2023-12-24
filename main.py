@@ -10,6 +10,10 @@ picFolder = os.path.join('static' ,'pics')
 
 app.config['UPLOAD_FOLDER'] = picFolder
 
+#Abdelhamid
+pathy=os.path.dirname(os.path.abspath(__file__))
+DATABASE= pathy +"/database/buses.db"
+
 
 @app.route("/home")
 def home():
@@ -51,7 +55,7 @@ def select():
     from_d = request.form.get("from")
     to_d = request.form.get("to")
     num = request.form.get("num")
-    conn = sqlite3.connect("database/buses.db")
+    conn = sqlite3.connect(DATABASE) #abdelhmaid
     cur = conn.cursor()
     if num != "" :
         cur.execute(f"""SELECT Bus_nm , Direction
@@ -86,7 +90,7 @@ def select():
 def post():
     direct = request.form.get("direc")
     num = request.form.get("num")
-    conn = sqlite3.connect("database/buses.db")
+    conn = sqlite3.connect(DATABASE) #abdelhmaid
     cur = conn.cursor()
     cur.execute(f"""SELECT Bus_nm 
   FROM buses where Bus_nm = {num};            
